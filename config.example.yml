@@ -1,0 +1,17 @@
+# WeChat Sender Configuration
+# Copy this file to config.yml and customize it
+
+# Default contact to send messages to (optional)
+# If not set, you must specify --contact every time
+default_contact: ""
+
+# WeChat window title (optional)
+# Leave empty to auto-detect
+wechat_window_title: ""
+
+# Delay between key presses in milliseconds (optional)
+# Increase if messages are being sent too fast
+key_delay_ms: 500
+
+# Enable verbose logging (optional)
+verbose: false

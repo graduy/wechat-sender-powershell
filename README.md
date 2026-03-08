@@ -1,70 +1,112 @@
 # 💬 WeChat Sender (PowerShell)
 
-微信消息自动发送技能 - 使用 PowerShell SendKeys 模拟键盘操作
+Automatically send WeChat messages using PowerShell and Windows SendKeys. No extra dependencies required.
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 安装
+### Prerequisites
+
+- Windows 10/11
+- PowerShell 5.1+
+- WeChat PC version (logged in)
+
+### Installation
 
 ```bash
-# 克隆到 OpenClaw skills 目录
-cd C:\Users\Grady\.openclaw\workspace\skills
-git clone <your-repo-url> wechat-sender-powershell
+# Clone to your OpenClaw skills directory
+cd <your-openclaw-skills-directory>
+git clone https://github.com/graduy/wechat-sender-powershell.git
 ```
 
-### 使用
+### Basic Usage
 
 ```powershell
-# 基础用法
-.\scripts\send-wechat.ps1 -contact "张三" -message "你好！"
+# Send a text message
+.\scripts\send-wechat.ps1 -contact "Contact Name" -message "Hello!"
 
-# 发送到群聊
-.\scripts\send-wechat.ps1 -contact "工作群" -message "明天开会"
+# Send to a group chat
+.\scripts\send-wechat.ps1 -contact "Work Group" -message "Meeting at 3pm"
+
+# Send with image
+.\scripts\send-wechat.ps1 -contact "Friend" -message "Check this out!" -image "C:\path\to\image.jpg"
+
+# Send with file
+.\scripts\send-wechat.ps1 -contact "Team" -message "Report attached" -file "C:\path\to\report.pdf"
 ```
 
-### 在 OpenClaw 中使用
+### Using with OpenClaw
 
+Simply say in chat:
 ```
-给 张三 发微信：晚上好！
+Send WeChat message to John: Hey, are you free tonight?
 ```
 
-## 📋 依赖
+## ⚙️ Configuration (Optional)
 
-- ✅ Windows 10/11
-- ✅ PowerShell 5.1+
-- ✅ 微信 PC 版（已登录）
-- ✅ System.Windows.Forms（内置）
+Copy the example config file:
+```powershell
+cp config.example.yml config.yml
+```
 
-## 🎯 功能特性
+Edit `config.yml` to set defaults:
+```yaml
+default_contact: "File Transfer Assistant"
+key_delay_ms: 500
+verbose: false
+```
 
-- ✅ 搜索联系人发送
-- ✅ 支持群聊
-- ✅ 长消息支持
-- ✅ 错误处理和日志
-- ✅ 彩色输出
+## ⚠️ Important Notes
 
-## ⚠️ 注意事项
+1. **WeChat PC must be logged in** - The script requires WeChat to be running
+2. **Administrator privileges** - May be required for keyboard simulation
+3. **Don't spam** - Sending too many messages quickly may get your account flagged
+4. **Input method** - Switch to English input method for better reliability
 
-1. 微信 PC 版必须登录
-2. 需要管理员权限运行
-3. 不要频繁发送（可能被封号）
-4. 中文输入法可能影响搜索
+## 🎯 Features
 
-## 📖 完整文档
+- ✅ Search contacts by name
+- ✅ Send text messages
+- ✅ Send images (via clipboard)
+- ✅ Send files (via attach dialog)
+- ✅ Support for group chats
+- ✅ Colored output and logging
+- ✅ Error handling
+- ✅ Optional configuration file
 
-查看 [SKILL.md](SKILL.md) 获取详细文档
+## 🐛 Troubleshooting
 
-## 🤝 贡献
+### WeChat window not found
+Make sure WeChat PC version is running and logged in.
 
-欢迎提交 Issue 和 Pull Request！
+### Message not sent
+- Check if the contact name is correct
+- Ensure the chat window is selected
+- Try switching to English input method
 
-## 📝 更新日志
+### Keys not working
+Run PowerShell as Administrator.
+
+## 📖 Documentation
+
+See [SKILL.md](SKILL.md) for detailed documentation.
+
+## 🤝 Contributing
+
+Issues and Pull Requests are welcome!
+
+## 📝 Changelog
+
+### v1.1.0 (2026-03-08)
+- ✅ Added image sending support
+- ✅ Added file sending support
+- ✅ Added optional configuration file
+- ✅ Improved error handling
 
 ### v1.0.0 (2026-03-08)
-- ✅ 初始版本
-- ✅ 支持搜索联系人
-- ✅ 支持发送文本消息
+- ✅ Initial release
+- ✅ Contact search
+- ✅ Text message sending
 
-## 📄 许可证
+## 📄 License
 
 MIT License

@@ -1,10 +1,10 @@
 ---
 name: wechat-sender-powershell
 slug: wechat-sender-powershell
-version: 1.0.0
-homepage: https://github.com/Grady/opencv-workspace
-description: 微信消息自动发送（PowerShell 版）。使用 Windows SendKeys 模拟键盘操作，无需额外依赖。触发条件：用户提到"发微信"、"给 xxx 发消息"、"微信自动发送"等。
-changelog: "Initial release: PowerShell-based WeChat sender using SendKeys"
+version: 1.1.0
+homepage: https://github.com/graduy/wechat-sender-powershell
+description: 微信消息自动发送（PowerShell 版）。使用 Windows SendKeys 模拟键盘操作，无需额外依赖。支持发送文本、图片、文件。触发条件：用户提到"发微信"、"给 xxx 发消息"、"微信自动发送"等。
+changelog: "Added image/file sending support and optional configuration"
 metadata:
   openclaw:
     emoji: "💬"
